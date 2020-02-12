@@ -683,7 +683,7 @@ var CamlBuilder = /** @class */ (function () {
             return new FieldExpressionToken(this.builder, this.name, "Text");
         };
         UserFieldExpression.prototype.EqualToCurrentUser = function () {
-            this.builder.WriteFieldRef(this.name, { LookupId: true });
+            this.builder.WriteFieldRef(this.name);
             this.builder.WriteBinaryOperation(this.startIndex, "Eq", "Integer", "{UserID}");
             return new QueryToken(this.builder, this.startIndex);
         };
