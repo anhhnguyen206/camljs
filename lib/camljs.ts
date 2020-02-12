@@ -1101,7 +1101,7 @@ module CamlBuilder {
             return new FieldExpressionToken(this.builder, this.name, "Text");
         }
         EqualToCurrentUser(): IExpression {
-            this.builder.WriteFieldRef(this.name, { LookupId: true });
+            this.builder.WriteFieldRef(this.name);
             this.builder.WriteBinaryOperation(this.startIndex, "Eq", "Integer", "{UserID}");
             return new QueryToken(this.builder, this.startIndex);
         }
